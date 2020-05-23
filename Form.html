@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+<figure>
+<a href="index.html">
+<img class="resize0" src="Images/Header.png" alt="CoolComputer"> 
+</a>
+</figure>
+
+<header>
+<h1>Comment Form - American Military University - WEBD221</h1>
+</header>
+
+<div class="color">
+<h4>Student Cory Lintz - ID#4138906</h4> 
+</div>
+
+<ul class="topnav">
+  <li><a href="index.html">Home Page</a></li>
+  <li><a href="setup.html">Setup</a></li>
+  <li><a href="CSS_Advanced_Techniques.html">Advanced</a></li>
+  <li><a class="active" href="Form.html">Form</a></li>
+  <li class="right"><a href="about.html">About</a></li>
+</ul>
+
+<main>
+<h2>Comment Form</h2>
+
+<h3>Tell me what you think about my computer setup idea.</h3> 
+
+<form method="post" action="http://ss1.ciwcertified.com/cgi-bin/process.pl">
+<br>
+<fieldset name="Comment Form">
+<fieldset name="Information:">
+<legend>Personal Information:</legend> 
+First Name: <input autofocus type="text" name="firstname" placeholder="John" required><br>
+Last Name: <input type="tel" name="lastname" placeholder="Doe" required><br>
+Work Number: <input type="tel" name="worknumber" placeholder="XXX-XXX-XXXX" pattern="^\d{3}-\d{3}-\d{4}$"><br>
+Cell Phone Number:<input type="tel" name="cellphonenumber" placeholder="XXX-XXX-XXXX" pattern="^\d{3}-\d{3}-\d{4}$"><br>
+Email: <input type="email" name="email" placeholder="user@domain.com" pattern="^.+@.+$" required><br>
+Company Website: <input type="url" name="website" placeholder="http://www.website.com" pattern="https?://.+"> (if applicable)<br>
+Today's Date: <input type="date" name="date" required><br>
+Years Computer Building Experience: 0 <input type="range" name="experience" min="0" max="10"> 10+ <br>
+Number of Computers Built: <input type="number" name="built" min="0" max="100">
+</fieldset>
+<br>
+<fieldset name="Recommendations:"> 
+<legend>Recommendations:</legend> 
+<p>What are your computer hardware recommendations?</p>
+
+<fieldset> 
+<legend>CPU Brand:</legend> 
+<input list="CPU" name="CPU" required>
+   <datalist id="CPU">
+      <option value="AMD">
+      <option value="Intel">
+      <option value="Other">
+   </datalist>
+</fieldset> 
+
+<br>
+
+<p>What is your Favorite Color?</p>
+Color: <input type="color" name="color"><br>
+
+<br>
+
+<fieldset>
+<legend>Motherboard Brand:</legend> 
+   <input type="radio" name="Usage" value="asus">ASUS<br>
+   <input type="radio" name="Usage" value="asrock">ASROCK<br>
+   <input type="radio" name="Usage" value="gigabyte">GIGABYTE<br>
+   <input type="radio" name="Usage" value="msi">MSI<br>
+   <input type="radio" name="Usage" value="other">Other<br>
+</fieldset>
+
+<fieldset>
+<legend>RAM Brand:</legend>
+Which brand of memory do you use/recommend?<br>
+<select name="RAM">
+   <option value="corsair">Corsair</option>
+   <option value="gskill">G.Skill</option>
+   <option value="mushkin">Mushkin</option>
+   <option value="micron">Micron</option>
+   <option value="kingston">Kingston</option>
+   <option value="xtremeddr">XTremeDDR</option>
+   <option value="ocz">OCZ</option>
+   <option value="samsung">Samsung</option>
+   <option value="transcend">Transcend</option>
+   <option value="hynix">Hynix</option>
+   <option value="other">Other</option>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>Additional Comments:</legend> 
+<p>
+Add your comments below:<br>
+<textarea name="comments" placeholder="Enter any additional comments here... This can be your complete setup, to recommendations to anything. (200 characters maximum)" maxlength="200" rows="5" cols="50"></textarea>
+</p>
+</fieldset>
+
+<p>Upload examples/PCPartsPicker lists here</p>
+File Upload<input type="file" name="file"><br>
+</fieldset>
+
+<fieldset>
+<legend>Submit Your Form:</legend> 
+<input type="reset" value="Reset">
+<input type="submit" value="Submit">
+
+</fieldset>
+</fieldset>
+
+</form>
+</main>
+
+<br>
+
+<footer>
+   <p>Posted by: <i>Cory Lintz</i></p>
+   <p>Contact information: <a href="mailto:cjlnumber1@gmail.com">
+  cjlnumber1@gmail.com</a>.</p>
+<p onmouseover="style.color='red'" onmouseout="style.color='black'">All logos and pictures are property of MSI, Nvidia, Unraid, Valve and/or other represented parties</p>
+</footer> 
+
+</body>
+</html>
+
+
+
