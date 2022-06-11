@@ -3,21 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <title>Assignment 1</title>
-<link rel="stylesheet" type="text/css" href="Assignment1.css">
-</head>   
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>    
 <body>
 <h1>Cory Lintz</h1>
-<hr />   
-<script>    
-document.write(<p id="You are using the following browser"></p>)
-document.write(<p id="You are using the following version of browser"></p>)
-</script>
+<div id="demo"></div>  
 <script>
 <!--
-let version = navigator.appVersion;
-document.getElementById("You are using the following version of browser").innerHTML = "You are using the following version of browser:<br>" + version;
-let browser = navigator.appName;
-document.getElementById("You are using the following browser").innerHTML = " You are using the following browser: " + browser;
+let text = "<p>You are using the following browser: " + navigator.appName + "</p>" + "<p>You are using the following version of the browser: " + navigator.appVersion + "</p>";       
+document.getElementById("demo").innerHTML = text;
 //-->
 </script>
 </body>
