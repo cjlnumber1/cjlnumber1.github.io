@@ -151,5 +151,56 @@ def gemini_refactor_local_file(
     return response.text
 
 
+@mcp.tool()
+def gemini_code_delegate(task_description: str, language: str = "python", constraints: str = "") -> str:
+    """
+    Delegate focused coding tasks to Gemini, such as generating boilerplates,
+    writing comprehensive unit tests, or implementing specific functions.
+    """
+    prompt = f"""
+    You are an expert software engineer implementing a task for an upstream orchestrator.
+    Language: {language}
+    Specific Constraints: {constraints if constraints else "None"}
+
+    Task:
+    {task_description}
+
+    Provide clean, documented, production-ready code with minimal conversational fluff.
+    """
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            temperature=0.2,
+        ),
+    )
+    return response.text
+
+
+@mcp.tool()
+def gemini_codebase_analyzer(file_contents_or_logs: str, analysis_objective: str) -> str:
+    """
+    Analyze large blocks of code, multi-file modules, or extensive stack traces.
+    Use this to audit architecture, find elusive bugs, or plan complex refactorings.
+    """
+    prompt = f"""
+    Analyze the following source code/logs with the objective: {analysis_objective}.
+
+    Data:
+    ---
+    {file_contents_or_logs}
+    ---
+
+    Provide an actionable, structured diagnosis detailing:
+    1. Root causes or architectural bottlenecks.
+    2. Concrete patch recommendations.
+    """
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+    )
+    return response.text
+
+
 if __name__ == "__main__":
     mcp.run()

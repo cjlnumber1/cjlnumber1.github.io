@@ -1,7 +1,8 @@
 # GeminiCodeWorker MCP Server
 
-An MCP server that hands a local file or directory's full contents to Gemini
-for analysis or refactoring, so Claude only needs to pass a filesystem path.
+An MCP server that delegates coding and analysis work to Gemini — either by
+reading local files/directories directly by path, or by taking code, task
+descriptions, or logs passed in as text.
 
 ## Tools
 
@@ -12,6 +13,12 @@ for analysis or refactoring, so Claude only needs to pass a filesystem path.
 - **gemini_refactor_local_file(file_path, instructions)** — reads a single
   file and asks Gemini to return the complete updated file content per the
   given instructions.
+- **gemini_code_delegate(task_description, language="python", constraints="")**
+  — asks Gemini to implement a focused coding task (boilerplate, unit tests,
+  a specific function) from a description, with no filesystem access.
+- **gemini_codebase_analyzer(file_contents_or_logs, analysis_objective)** —
+  asks Gemini to diagnose pasted code, multi-file content, or stack traces
+  against a stated objective and propose concrete fixes.
 
 ## Setup
 
