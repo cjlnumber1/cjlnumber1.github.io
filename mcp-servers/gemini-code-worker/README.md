@@ -30,21 +30,31 @@ python server.py
 
 ## Register with Claude Code
 
-Add to your MCP configuration (e.g. `.mcp.json` or `claude mcp add`):
+This repo's root `.mcp.json` already registers the server:
 
 ```json
 {
   "mcpServers": {
     "gemini-code-worker": {
       "command": "python",
-      "args": ["mcp-servers/gemini-code-worker/server.py"],
-      "env": {
-        "GEMINI_API_KEY": "your-api-key"
-      }
+      "args": ["mcp-servers/gemini-code-worker/server.py"]
     }
   }
 }
 ```
+
+It deliberately has no `env` block — this is a **public** repository, so
+never commit a real `GEMINI_API_KEY` into `.mcp.json`. The server process
+inherits environment variables from whatever shell launches Claude Code, so
+just export the key in your own shell/profile before starting Claude Code:
+
+```bash
+export GEMINI_API_KEY="your-api-key"   # add to your shell profile, not the repo
+```
+
+If your MCP client doesn't pass through the parent shell's environment, add
+a `.mcp.json` locally (gitignored) with an `env` block instead of editing the
+committed one.
 
 ## Notes
 
