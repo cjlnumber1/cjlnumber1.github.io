@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gemini-code-worker": {
+      "command": "python",
+      "args": ["mcp-servers/gemini-code-worker/server.py"]
+    }
+  }
+}
